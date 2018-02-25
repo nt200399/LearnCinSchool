@@ -28,7 +28,7 @@ int main()
     printf("%-5s %-15s %-25s %-15s %-15s\n","SL","Ma Vach","Ten Sach","Gia Tien","Tong Tien");
     printf("--------------------------------------------------------------------------\n");
     printf("%-5d %-15d %-25s $%-15.2f $%-15.2f\n",SL,MaVach,TenSach,GiaTien,TongTien);
-    printf("Thue VAT: $%.2f\n",VAT);
+    printf("Thue VAT 4%%: $%.2f\n",VAT);
     printf("Tong tien phai tra: $%.2f \n\n", VAT + TongTien);
     return 0;
 }
