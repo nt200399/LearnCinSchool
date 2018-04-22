@@ -1,33 +1,30 @@
 #include <stdio.h>
 
-void tangluong(int *luonghientai);
+void tangluong(int luonghientai, int *luongmoi);
 
 int main()
 {
-    int namcongtac;
-    do 
+    int namcongtac, luonghientai, luongmoi;
+
+    do
     {
         printf("Nhap so nam cong tac: ");
         scanf("%d", &namcongtac);
         if (namcongtac < 3)
-            printf("Nhan vien chua du so nam cong tac de tang luong!\n");
+            printf("Nhan vien chua du so nam de tang luong!\n");
     } while (namcongtac < 3);
 
     printf("Nhap so luong hien tai: ");
-    int luonghientai;
     scanf("%d", &luonghientai);
-    tangluong(&luonghientai);
-    printf("Luong tang la: %d\n", luonghientai);
 
-    return 0;
+    tangluong(luonghientai, &luongmoi);
+    printf("Luong moi cua nhan vien la: %d\n", luongmoi);
 }
 
-void tangluong(int *luonghientai)
+void tangluong(int luonghientai, int *luongmoi)
 {
-    printf("Nhap so tien tang them: ");
     int tientang;
+    printf("Nhap so tien tang them: ");
     scanf("%d", &tientang);
-    
-    *luonghientai += tientang;
-
+    *luongmoi = luonghientai + tientang;
 }
