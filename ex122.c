@@ -1,35 +1,29 @@
 #include <stdio.h>
-#define MAX 1000
 
-void nhapmang(int arr[], int *n);
-void diachihe16(int arr[], int n);
+double* giatrimax(double *arr, int n);
 
 int main()
 {
-    int arr[MAX], n;
-    nhapmang(arr, &n);
-    diachihe16(arr, n);
-
+    double arr[100];
+    int n;
+    printf("Nhap so phan tu: ");
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++)
+        scanf("%lf", &arr[i]);
+    if (giatrimax(arr, n) != 0)
+        printf("Con tro tro toi gia tri lon nhat cua mang la: %p\n", giatrimax(arr,n));
     return 0;
 }
 
-void nhapmang(int arr[], int *n)
+double* giatrimax(double *arr, int n)
 {
-    printf("Nhap so phan tu mang: ");
-    scanf("%d",&*n);
-    for (int i = 0; i < *n; i++)
-    {
-        printf("arr[%d] = ", i);
-        scanf("%d", &arr[i]);
-    }
-}
-
-void diachihe16(int arr[], int n)
-{
-    int  *p;
+    double *max = arr;
+    if (n == 0)
+        return NULL;
     for (int i = 0; i < n; i++)
     {
-        p = &arr[i];
-        printf("Dia chi: %p\n", p);
+        if (*max < arr[i])
+            *max = arr[i];
     }
+    return max;
 }
