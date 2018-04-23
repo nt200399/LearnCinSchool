@@ -1,6 +1,6 @@
 #include <stdio.h>
 
-int demsochan(int arr[], int n);
+int demsochan(int *arr, int n);
 
 int main()
 {
@@ -14,11 +14,14 @@ int main()
     return 0;
 }
 
-int demsochan(int arr[], int n)
+int demsochan(int *arr, int n)
 {
     int dem = 0;
     for (int i = 0; i < n; i++)
-        if (arr[i] % 2 == 0)
+    {
+        if (*arr % 2 == 0)
             dem++;
+        arr++;
+    }
     return dem;
 }
