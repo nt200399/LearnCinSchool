@@ -1,17 +1,24 @@
 #include <stdio.h>
 
+int demsochan(int arr[], int n);
+
 int main()
 {
-    int a, b, c;
-    int *p;
-    printf("Nhap gia tri: ");
-    scanf("%d%d%d", &a, &b, &c);
-    p = &a;
-    printf("Gia tri tham chieu: %d\n", *p);
-    p = &b;
-    printf("Gia tri tham chieu: %d\n", *p);
-    p = &c;
-    printf("Gia tri tham chieu: %d\n", *p);
-    printf("%p",p);
+    int arr[100], n;
+    printf("Nhap so phan tu mang: ");
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++)
+        scanf("%d", &arr[i]);
+    printf("So phan tu chan la: %d\n", demsochan(arr, n));
+
     return 0;
+}
+
+int demsochan(int arr[], int n)
+{
+    int dem = 0;
+    for (int i = 0; i < n; i++)
+        if (arr[i] % 2 == 0)
+            dem++;
+    return dem;
 }
