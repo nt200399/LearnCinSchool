@@ -1,30 +1,32 @@
 #include <stdio.h>
 
+void doanhsobanhang(int *arr, int *n);
+int tongdoanhso(int *arr, int n);
+
 int main()
 {
-    int a, b, c;
-    int *p;
-    printf("Nhap gia tri: ");
-    scanf("%d%d%d", &a, &b, &c);
-
-    p = &a;
-    *p += 100;
-    printf("Gia tri sau cong: %d\n", *p);   
-
-    p = &b;
-    *p += 100;
-    printf("Gia tri sau cong: %d\n", *p); 
-
-    p = &c;
-    *p += 100;
-    printf("Gia tri sau cong: %d\n", *p);   
-    
-    // int S = 100;
-    // p = &S;
-    // a += *p;
-    // b += *p;
-    // c += *p;
-    // printf("Gia tri sau khi cong!\n");
-    // printf("%d\n%d\n%d\n", a, b, c);
+    int *arr, n;
+    doanhsobanhang(arr, &n);
+    printf("Tong doanh so la: %d\n", tongdoanhso(arr, n));
     return 0;
+}
+
+void doanhsobanhang(int *arr, int *n)
+{
+    printf("Nhap so thang: ");
+    scanf("%d", &*n);
+    for (int i = 0; i < *n; i++)
+    {
+        scanf("%d", &*(arr + i));
+    }
+}
+
+int tongdoanhso(int *arr, int n)
+{
+    int sum = 0;
+    for (int i = 0; i < n; i++)
+    {
+        sum += *(arr + i);
+    }
+    return sum;
 }
