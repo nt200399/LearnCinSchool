@@ -1,22 +1,29 @@
 #include <stdio.h>
 
-void swap(int *a, int *b, int *c);
+void lietkephantumang(int *arr, int n);
 
 int main()
 {
-    int a, b, c;
-    printf("Nhap gia tri: ");
-    scanf("%d%d%d", &a, &b, &c);
-    printf("Gia tri truoc khi doi cho: %d %d %d\n", a, b, c);
-    swap(&a, &b, &c);
-    printf("Gia tri sau khi doi cho: %d %d %d\n", a, b, c);
+    int *arr, n;
+    printf("Nhap so phan tu: ");
+    scanf("%d", &n);
+    for (int i = 0; i < n; i++)
+        scanf("%d", &*(arr + i));
+    printf("\n");
+    lietkephantumang(arr, n);
     return 0;
 }
 
-void swap(int *a, int *b, int *c)
+void lietkephantumang(int *arr, int n)
 {
-    int tg = *a;
-    *a = *b;
-    *b = *c;
-    *c = tg;
+    for (int h = 0; h < n; h++)
+    {
+        for (int i = 0; i < n - h; i++)
+        {
+            for (int j = 0; j <= i; j++)
+                printf("%d\t", *(arr + j));
+            printf("\n");
+        }
+        arr++;
+    }
 }
