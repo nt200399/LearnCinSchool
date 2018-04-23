@@ -19,9 +19,8 @@ int demsochan(int *arr, int n)
     int dem = 0;
     for (int i = 0; i < n; i++)
     {
-        if (*arr % 2 == 0)
+        if (*(arr + i) % 2 == 0)
             dem++;
-        arr++;
     }
     return dem;
 }
