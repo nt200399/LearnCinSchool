@@ -6,9 +6,9 @@
 
 int hamstrend(char s[], char t[])
 {
-    for (int i = 0; i < strlen(s); i++)
+    for (int i = 0; i < strlen(t); i++)
     {
-        if (s[strlen(s) - i] = t[strlen(t) - i])
+        if (s[strlen(s) - i] == t[strlen(t) - i])
             continue;
         else 
             return 0;
